@@ -5,13 +5,15 @@
 # Client SECRET: 2R0RBMTKV3LTRIPR1INR4LFQ2BNPL4FP4GG4AS2F1C4N4ZIO
 
 
-# ------- Query URL ------- 
+# ------- URL ------- 
 
-https://api.foursquare.com/v2/venues/search?ll=51.504557,-0.017334
+"""https://api.foursquare.com/v2/venues/search?ll=51.504557,-0.017334
 &query=bars=browse
 &client_id=0XFBHJXOKIQBB3FZSJJEGJFHS0WOJI5ZV3ZFDCBCWC2AVLH2
 &client_secret=2R0RBMTKV3LTRIPR1INR4LFQ2BNPL4FP4GG4AS2F1C4N4ZIO
-&v=20161024&limit=5&rating 
+&v=20161024&limit=5&rating"""
+
+# ------- CODE ------- 
 
 import requests
 
@@ -22,8 +24,3 @@ req = requests.get("https://api.foursquare.com/v2/venues/trending?ll={city_name}
 data =req.json()
 
 print "Here are the top trending {venues} in your desired {city}".format(city=data['name'],venues=data['city'][0]['venues'])
-
-
-
-
-
