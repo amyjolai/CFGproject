@@ -31,11 +31,11 @@ geocode=requests.get('http://maps.googleapis.com/maps/api/geocode/json?address={
 lldat=geocode.json()
 long=data.['geometry']['location']['lng']
 lat=data.['geometry']['location']['lat']
-longlat=",".join(long,lat)
+longlat=",".join(lat,long)
 # ------- Query URL -------
 >>>>>>> origin/master
 
-"""https://api.foursquare.com/v2/venues/search?ll=51.504557,-0.017334
+"""https://api.foursquare.com/v2/venues/search?ll="longlat"
 &query=bars=browse
 &client_id=0XFBHJXOKIQBB3FZSJJEGJFHS0WOJI5ZV3ZFDCBCWC2AVLH2
 &client_secret=2R0RBMTKV3LTRIPR1INR4LFQ2BNPL4FP4GG4AS2F1C4N4ZIO
