@@ -33,6 +33,7 @@ ll=
 
 import requests
 
+city = raw_input ('Which city would you like to explore?')
 
 req = requests.get("https://api.foursquare.com/v2/venues/trending?ll={city_name}&oauth_token=SBI2I10VMO23IPNK3PU0AANO0JEHYKNGKZYNBB3ZTF3OL3EQ&v=20161111".format(city_name=city))
 
