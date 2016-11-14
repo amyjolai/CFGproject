@@ -1,4 +1,9 @@
-# ------- FOURSQUARE API KEY ------- 
+import re
+import requests
+from flask import Flask
+from flask import render_template
+
+# ------- FOURSQUARE API KEY -------
 
 
 # Client ID: 0XFBHJXOKIQBB3FZSJJEGJFHS0WOJI5ZV3ZFDCBCWC2AVLH2
@@ -12,11 +17,15 @@
 #API KEY: AIzaSyA1SqRM6ra6Ttlt2UYE6eomDTfQDvhvgTk
 
 #------Geocode------
-city =((str(raw_input ('Which city would you like to explore?'))).strip()).strip(',')
+city =(str(raw_input ('Which city would you like to explore? (City, Country) \n'))).split()
 
-address=(city.split()).replace(' ','+')
+print city [0]
 
-print 'Jet-setting off to '+city+'... '
+print '"Jet-setting off to "+city[0]+"... "
+
+address="+".join(city)
+
+#print address
 
 geocode=requests.get('http://maps.googleapis.com/maps/api/geocode/json?address={destination}'.format(destination=address))
 ll=
