@@ -5,8 +5,12 @@ auth.set_access_token('24850991-qmvMhxBqSGMGGqvAlzIV4osP85rfO22l949b2NbtZ','f4JH
 
 twitter_api = tweepy.API(auth)
 
+city =(str(raw_input ('Which city would you like to explore? (City, Country) \n'))).split()
+
+search_place= city [0]
+
 london_tweets = twitter_api.search(
-    q="{London}",
+    q="{search_place}",
     result_type="recent"
 
 )
