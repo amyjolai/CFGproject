@@ -29,8 +29,11 @@ address="+".join(city)
 
 geocode=requests.get('http://maps.googleapis.com/maps/api/geocode/json?address={destination}'.format(destination=address))
 lldat=geocode.json()
-long=data.['geometry']['location']['lng']
-lat=data.['geometry']['location']['lat']
+
+
+#to go in foursquare api URL
+long=lldata.['geometry']['location']['lng']
+lat=lldata.['geometry']['location']['lat']
 longlat=",".join(lat,long)
 # ------- Query URL -------
 >>>>>>> origin/master
