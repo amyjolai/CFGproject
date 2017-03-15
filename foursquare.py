@@ -22,17 +22,19 @@ from flask import render_template
 #------Geocode------
 city =(str(raw_input ('Which city would you like to explore? (City, Country) \n'))).split()
 
-print city [0]
+search_place= city [0]
 
-print '"Jet-setting off to "+city[0]+"... "
+print '"Jet-setting off to "+search_place+"... "
 
 address="+".join(city)
 
 #print address
 
 geocode=requests.get('http://maps.googleapis.com/maps/api/geocode/json?address={destination}'.format(destination=address))
-ll=
-# ------- Query URL ------- 
+lldat=geocode.json()
+longlat=data.['geometry']['bounds'][]
+
+# ------- Query URL -------
 >>>>>>> origin/master
 
 # ------- FOURSQUARE API KEY ------- 
